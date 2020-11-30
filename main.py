@@ -84,9 +84,8 @@ while erro_nome_saida:
 
     # Gerar o arquivo KML
     try:
-        outputfile = open(nome_saida.rstrip(".py") + ".kml", "w")
-        outputfile.write(''.join(output))
-        outputfile.close()
+        with open(nome_saida.rstrip(".py") + ".kml", "w") as outputfile:
+            outputfile.write(''.join(output))
         print("\n\033[33m====== \033[32mO programa foi finalizado com sucesso \033[33m======\033[0m")
     except:
         erro_nome_saida = True
